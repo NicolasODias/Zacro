@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  --color-brand-orange: #FF6600;
+  --color-brand-black: #000000;
+  --color-brand-dark: #0A0A0A;
+
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-white antialiased selection:bg-brand-orange selection:text-white;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-white to-gray-400;
+}
+
+.text-orange-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-brand-orange to-[#FF9933];
+}
